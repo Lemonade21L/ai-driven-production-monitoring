@@ -1,1 +1,10 @@
-//JavaScript here
+var obj = payload.DeepDetect.objects;
+if(objs.length === 0) {
+  print('No object detected');
+}else{
+  for (var i = 0; i<objs.length; i++){
+  var IOTID = '<Machine Name>';
+  payload = {IOTID : '<Machine Name>'};
+  print('Status : ', IOTID)
+  }
+}
