@@ -12,9 +12,15 @@ We bridge this gap by using AI to detect the physical presence of products. If a
 ## 🏗️ Workflow & Architecture
 1. **Visual Input:** Connect CCTV stream with **CiraCore AI**.
 2. **Deep Detection:** AI model identifies products on the conveyor.
-3. **Logic Processing:** JavaScript script processes the detection value (Detected = Running).
-4. **Data Transmission:** Send JSON payloads using **RestPutJson** module.
-5. **Integration:** Update the central database via API end-points.
+3. **Logic Processing:** JavaScript script (Node.js) processes the detection value.
+4. **Data Transmission:** Transmit real-time data using CiraCore's **RestPutJson** module.
+5. **Integration:** Update the central database via secured API end-points.
+
+## 📡 CiraCore Integration (RestPutJson)
+The system utilizes the **RestPutJson** function within CiraCore to communicate with the backend API.
+- **Target URL:** `https://<your-api-gateway>/api/sync`
+- **Method:** `PUT`
+- **Payload:** JSON format containing `MachineID` and production status.
 
 ## 🎨 Design & Compliance
 > [!NOTE]
@@ -22,12 +28,12 @@ We bridge this gap by using AI to detect the physical presence of products. If a
 
 ## 🛠️ Technology Stack
 - **AI Engine:** CiraCore (Deep Learning Engine)
-- **Language:** Python Plus
+- **Language:** JavaScript (Node.js / Express.js)
 - **Communication:** RESTful API (JSON)
 - **Design Tools:** Procreate (for System Sketches), Draw.io (for Flowcharts & Diagrams)
 
 ## 🙏 Acknowledgements
-Special thanks to the **CIRA Automation Team** for providing **CiraCore**, which serves as the core AI inference engine for this project.
+Special thanks to the **CiRA CORE Team** for providing **CiraCore**, which serves as the core AI inference engine for this project.
 - Website: [https://www.cira-ai.com/](https://www.cira-ai.com/)
 
 ## 📄 License
@@ -49,9 +55,14 @@ This project is licensed under the **MIT License**.
 ## 🏗️ ขั้นตอนการทำงาน
 1. **รับภาพ:** เชื่อมต่อกล้อง CCTV เข้ากับ **CiraCore AI**
 2. **ตรวจจับ:** ใช้โมเดล Deep Learning ตรวจจับชิ้นงานบนสายพาน
-3. **ประมวลผล:** ใช้ Python Plus ประมวลผลค่าที่ได้ (หากตรวจพบ = สถานะ Running)
-4. **ส่งข้อมูล:** แปลงค่าเป็น JSON และส่งผ่านโมดูล **RestPutJson**
+3. **ประมวลผล:** ใช้ JavaScript (Node.js) ประมวลผลตรรกะการตรวจจับ
+4. **ส่งข้อมูล:** ส่งข้อมูลแบบ Real-time ผ่านฟังก์ชัน **RestPutJson** ของ CiraCore
 5. **บันทึกผล:** อัปเดตข้อมูลไปยัง API End-point ของระบบฐานข้อมูล
+
+## 📡 การเชื่อมต่อ CiraCore (RestPutJson)
+ระบบใช้ฟังก์ชัน **RestPutJson** ภายใน CiraCore เพื่อส่งข้อมูลไปยัง API ส่วนหลัง
+- **URL เป้าหมาย:** `https://<your-api-gateway>/api/sync`
+- **รูปแบบ:** ส่งข้อมูลผ่านโปรโตคอล HTTP `PUT` ในรูปแบบ JSON 
 
 ## 🎨 การออกแบบและนโยบายความเป็นส่วนตัว
 > [!IMPORTANT]
@@ -59,10 +70,10 @@ This project is licensed under the **MIT License**.
 
 ## 🛠️ เทคโนโลยีที่ใช้
 - **AI Engine:** CiraCore (Deep Learning Engine)
-- **Language:** Python Plus
+- **Language:** JavaScript (Node.js / Express.js)
 - **Communication:** RESTful API (JSON)
 - **Design Tools:** Procreate (สำหรับวาดภาพประกอบ), Draw.io (สำหรับเขียน Flowchart)
 
-## 🙏 กิตติกรรมประกาศ
-ขอขอบคุณทีมผู้พัฒนา **CIRA Automation** สำหรับเครื่องมือ **CiraCore** ที่ใช้เป็นหัวใจหลักในการประมวลผล AI ในโครงการนี้
+## 🙏 Acknowledgements
+ขอขอบคุณทีมผู้พัฒนา **CiRA CORE Automation** สำหรับเครื่องมือ **CiraCore** ที่ใช้เป็นหัวใจหลักในการประมวลผล AI ใน Project นี้
 - เว็บไซต์: [https://www.cira-ai.com/](https://www.cira-ai.com/)
