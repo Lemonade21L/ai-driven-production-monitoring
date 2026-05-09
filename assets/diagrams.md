@@ -1,2 +1,1 @@
-//Insert diagram here
-//![Alt text](Diagram.png)
+![Alt text](Diagram.png)
